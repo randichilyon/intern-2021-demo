@@ -5,7 +5,11 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 
+import java.util.List;
+import java.util.Map;
+
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 /**
@@ -41,5 +45,12 @@ public class SearchServiceImplTest {
     assertEquals("Samsung Note 10",result.getName());
     assertEquals("1",result.getId());
     assertEquals("Android 10",((Samsung)result).getAndroidVersion());
+  }
+
+  @Test
+  public void findAllPhoneName() {
+    Map<String, List<String>> result = searchService.findAllPhoneName();
+    System.out.println(result);
+    assertNotNull(result);
   }
 }

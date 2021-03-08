@@ -9,4 +9,5 @@ import lombok.Data;
 public class Phone {
   private String id;
   private String name;
+  private PhoneType type;
 }
